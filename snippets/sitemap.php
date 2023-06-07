@@ -24,7 +24,7 @@
             <changefreq><?= getChangeFreq($last_modified) ?></changefreq>
             <priority><?php
             if(!$p->sitemapPriority()->exists()){
-                echo ($p->isHomePage()) ? 1 : number_format(0.5 / $p->depth(), 1);
+                echo ($p->isHomePage()) ? number_format(1, 1) : number_format(0.5 / $p->depth(), 1);
             } else {
                 echo $p->sitemapPriority()->toFloat();
             }
